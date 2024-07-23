@@ -11,6 +11,12 @@
 		DA3787212C4E207200ED35D1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3787202C4E207200ED35D1 /* ContentView.swift */; };
 		DA3787232C4E207300ED35D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA3787222C4E207300ED35D1 /* Assets.xcassets */; };
 		DA3787262C4E207300ED35D1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA3787252C4E207300ED35D1 /* Preview Assets.xcassets */; };
+		DA91DC542C4FC34F0048F371 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA91DC532C4FC34F0048F371 /* Fonts.swift */; };
+		DA91DC562C4FC37A0048F371 /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA91DC552C4FC37A0048F371 /* Typography.swift */; };
+		DA91DC582C4FC3900048F371 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA91DC572C4FC3900048F371 /* SplashScreen.swift */; };
+		DA91DC5E2C4FC4390048F371 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DA91DC5B2C4FC4390048F371 /* Pretendard-Regular.otf */; };
+		DA91DC5F2C4FC4390048F371 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DA91DC5C2C4FC4390048F371 /* Pretendard-SemiBold.otf */; };
+		DA91DC602C4FC4390048F371 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DA91DC5D2C4FC4390048F371 /* Pretendard-Bold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,13 @@
 		DA3787202C4E207200ED35D1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DA3787222C4E207300ED35D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA3787252C4E207300ED35D1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DA91DC532C4FC34F0048F371 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		DA91DC552C4FC37A0048F371 /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
+		DA91DC572C4FC3900048F371 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SplashScreen.swift; path = RAScue/Sources/Extenstion/SplashScreen.swift; sourceTree = SOURCE_ROOT; };
+		DA91DC592C4FC3DA0048F371 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		DA91DC5B2C4FC4390048F371 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		DA91DC5C2C4FC4390048F371 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		DA91DC5D2C4FC4390048F371 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +64,7 @@
 		DA37871D2C4E207200ED35D1 /* RAScue */ = {
 			isa = PBXGroup;
 			children = (
+				DA91DC592C4FC3DA0048F371 /* Info.plist */,
 				DA37872D2C4E208300ED35D1 /* Sources */,
 				DA37872C2C4E207C00ED35D1 /* Resources */,
 			);
@@ -68,6 +82,7 @@
 		DA37872C2C4E207C00ED35D1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DA91DC5A2C4FC42B0048F371 /* Fonts */,
 				DA37871E2C4E207200ED35D1 /* RAScueApp.swift */,
 				DA3787202C4E207200ED35D1 /* ContentView.swift */,
 				DA3787222C4E207300ED35D1 /* Assets.xcassets */,
@@ -79,6 +94,7 @@
 		DA37872D2C4E208300ED35D1 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				DA91DC512C4FC3390048F371 /* Components */,
 				DA3787312C4E209C00ED35D1 /* Extenstion */,
 				DA3787302C4E209A00ED35D1 /* View */,
 				DA37872F2C4E209600ED35D1 /* Model */,
@@ -111,8 +127,37 @@
 		DA3787312C4E209C00ED35D1 /* Extenstion */ = {
 			isa = PBXGroup;
 			children = (
+				DA91DC522C4FC3440048F371 /* Enum */,
+				DA91DC552C4FC37A0048F371 /* Typography.swift */,
 			);
 			path = Extenstion;
+			sourceTree = "<group>";
+		};
+		DA91DC512C4FC3390048F371 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DA91DC572C4FC3900048F371 /* SplashScreen.swift */,
+			);
+			name = Components;
+			path = RAScue/Sources/Components;
+			sourceTree = "<group>";
+		};
+		DA91DC522C4FC3440048F371 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				DA91DC532C4FC34F0048F371 /* Fonts.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		DA91DC5A2C4FC42B0048F371 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DA91DC5D2C4FC4390048F371 /* Pretendard-Bold.otf */,
+				DA91DC5B2C4FC4390048F371 /* Pretendard-Regular.otf */,
+				DA91DC5C2C4FC4390048F371 /* Pretendard-SemiBold.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,7 +219,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA3787262C4E207300ED35D1 /* Preview Assets.xcassets in Resources */,
+				DA91DC602C4FC4390048F371 /* Pretendard-Bold.otf in Resources */,
+				DA91DC5E2C4FC4390048F371 /* Pretendard-Regular.otf in Resources */,
 				DA3787232C4E207300ED35D1 /* Assets.xcassets in Resources */,
+				DA91DC5F2C4FC4390048F371 /* Pretendard-SemiBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,7 +233,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA91DC582C4FC3900048F371 /* SplashScreen.swift in Sources */,
 				DA3787212C4E207200ED35D1 /* ContentView.swift in Sources */,
+				DA91DC542C4FC34F0048F371 /* Fonts.swift in Sources */,
+				DA91DC562C4FC37A0048F371 /* Typography.swift in Sources */,
 				DA37871F2C4E207200ED35D1 /* RAScueApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,6 +374,7 @@
 				DEVELOPMENT_TEAM = L9WZF9J89T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RAScue/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -352,6 +404,7 @@
 				DEVELOPMENT_TEAM = L9WZF9J89T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RAScue/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
