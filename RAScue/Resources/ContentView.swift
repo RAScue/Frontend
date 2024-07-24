@@ -13,7 +13,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             if isActive {
-                EmptyView()
+                Signin()
             } else {
                 SplashScreen()
                     .onAppear {

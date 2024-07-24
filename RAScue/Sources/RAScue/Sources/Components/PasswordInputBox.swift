@@ -26,9 +26,11 @@ struct PasswordInputBox: View {
                     if isSecure {
                         SecureField("", text: $name)
                             .padding([.vertical, .leading], 16)
+                            .foregroundColor(Color("80"))
                     } else {
                         TextField("", text: $name)
                             .padding([.vertical, .leading], 16)
+                            .foregroundColor(Color("80"))
                     }
                     Button(action: {
                         isSecure.toggle()

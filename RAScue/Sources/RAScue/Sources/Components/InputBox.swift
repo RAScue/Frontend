@@ -25,6 +25,7 @@ struct InputBox: View {
                         .foregroundColor(Color("50"))
                 }
                 TextField("", text: $name)
+                    .foregroundColor(Color("80"))
                     .padding([.vertical, .leading], 16)
                     .overlay(
                         RoundedRectangle(cornerRadius: 12)
