@@ -69,7 +69,7 @@ struct Signin: View {
                 }
                 .frame(maxHeight: .infinity, alignment: .top)
             }
-        }
+        }.navigationBarBackButtonHidden()
     }
 }
 
