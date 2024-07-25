@@ -12,8 +12,6 @@ struct InputBox: View {
     let placehorder: String
     @Binding var text: String
 
-
-
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             CustomText(text: title, fontType: .BodyStrong)
@@ -35,5 +33,3 @@ struct InputBox: View {
         }
     }
 }
-
-

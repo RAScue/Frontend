@@ -8,7 +8,7 @@ import SwiftUI
 
 struct Signin: View {
     @StateObject private var viewModel = SigninViewModel()
-    
+
     var body: some View {
         NavigationView {
             ZStack {
@@ -27,13 +27,13 @@ struct Signin: View {
                     .padding(20)
                     .padding(.top, 66.82)
                     .background(Color("10"))
-                    
+
                     VStack(spacing: 14) {
                         InputBox(title: "아이디", placehorder: "아이디를 입력해주세요", text: $viewModel.username)
                         PasswordInputBox(title: "비밀번호", placehorder: "비밀번호를 입력하세요", text: $viewModel.password)
                     }
                     .padding(20)
-                    
+
                     HStack {
                         Spacer()
                         NavigationLink(destination: EmptyView()) {
@@ -42,18 +42,18 @@ struct Signin: View {
                                 .foregroundColor(Color("80"))
                         }
                     }
-                    
+
                     HStack {
-                        VStack { Divider().background(Color("40")).padding(.leading, 20)}
+                        VStack { Divider().background(Color("40")).padding(.leading, 20) }
                         CustomText(text: "계정이 없을 경우", fontType: .CaptionStrong)
                             .padding(.horizontal, 10)
                             .foregroundColor(Color("40"))
                         VStack { Divider().background(Color("40")).padding(.trailing, 20) }
                     }.padding(.top, 10).padding(.bottom, 20)
-                    
+
                     HStack {
                         Spacer()
-                        HStack(alignment: .center, spacing: 4){
+                        HStack(alignment: .center, spacing: 4) {
                             CustomText(text: "계정이 없으신가요?", fontType: .Caption)
                                 .foregroundColor(Color("80"))
                             NavigationLink(destination: Signup()) {
@@ -63,7 +63,7 @@ struct Signin: View {
                         }
                         Spacer()
                     }
-                    
+
                     Spacer()
                     NextButton(title: "로그인", destination: EmptyView())
                 }

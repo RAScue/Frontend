@@ -1,35 +1,10 @@
-//
-//  ContentView.swift
-//  RAScue
-//
-//  Created by 준기 on 7/22/24.
-//
-
 import SwiftUI
 
 struct ContentView: View {
-    @State private var isActive = false
+    @EnvironmentObject var viewModel: ViewModel
 
     var body: some View {
-        ZStack {
-            if isActive {
-                Signin()
-            } else {
-                SplashScreen()
-                    .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                            withAnimation {
-                                isActive = true
-                            }
-                        }
-                    }
-            }
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.white)
-    }
-}
+        MainView()
 
-#Preview {
-    ContentView()
+    }
 }

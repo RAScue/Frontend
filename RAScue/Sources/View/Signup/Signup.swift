@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct Signup: View {
-    @StateObject private var viewModel = SigninViewModel()
-    
+    @StateObject private var viewModel = ViewModel()
+    @Environment(\.dismiss) private var dismiss
+
     var body: some View {
         NavigationView {
             ZStack {
@@ -28,14 +29,20 @@ struct Signup: View {
                     .padding(20)
                     .padding(.top, 66.82)
                     .background(Color("10"))
-                    
+
                     VStack(spacing: 14) {
                         InputBox(title: "아이디", placehorder: "아이디를 입력해주세요", text: $viewModel.username)
                         PasswordInputBox(title: "비밀번호", placehorder: "비밀번호를 입력하세요", text: $viewModel.password)
-                        PasswordInputBox(title: "비밀번호 확인", placehorder: "비밀번호를 입력하세요", text: $viewModel.password)
+                        PasswordInputBox(title: "비밀번호 확인", placehorder: "비밀번호를 다시 입력하세요", text: $viewModel.passwordCheck)
                     }
                     .padding(20)
-                    
+
+                    if let errorMessage = viewModel.errorMessage {
+                        Text(errorMessage)
+                            .foregroundColor(.red)
+                            .padding(.horizontal, 20)
+                    }
+
                     HStack(alignment: .center) {
                         Spacer()
                         VStack { Divider().background(Color("40")) }
@@ -44,11 +51,13 @@ struct Signup: View {
                             .foregroundColor(Color("40"))
                         VStack { Divider().background(Color("40")) }
                         Spacer()
-                    }.padding(.top, 10).padding(.bottom, 20)
-                    
+                    }
+                    .padding(.top, 10)
+                    .padding(.bottom, 20)
+
                     HStack(alignment: .center) {
                         Spacer()
-                        HStack(alignment: .center, spacing: 4){
+                        HStack(alignment: .center, spacing: 4) {
                             CustomText(text: "계정이 있으신가요?", fontType: .Caption)
                                 .foregroundColor(Color("80"))
                             NavigationLink(destination: Signin()) {
@@ -58,16 +67,33 @@ struct Signup: View {
                         }
                         Spacer()
                     }
-                    
+
                     Spacer()
-                    NextButton(title: "다음", destination: EmptyView())
+                    Button(action: {
+                        if viewModel.password != viewModel.passwordCheck {
+                            viewModel.errorMessage = "비밀번호가 일치하지 않습니다"
+                            return
+                        }
+                        viewModel.emailAuthSignUp(email: viewModel.email, userName: viewModel.username, password: viewModel.password)
+                    }) {
+                        CustomText(text: "다음", fontType: .BodyStrong)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(Color("90"))
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                            .padding(.horizontal, 20)
+                    }
+
                 }
                 .frame(maxHeight: .infinity, alignment: .top)
             }
-        }.navigationBarBackButtonHidden()
+        }
+        .navigationBarBackButtonHidden()
     }
 }
 
 #Preview {
     Signup()
+        .environmentObject(ViewModel())
 }
