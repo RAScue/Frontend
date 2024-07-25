@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SecondSignup: View {
     @StateObject private var viewModel = ViewModel()
-    
+
     var body: some View {
         NavigationView {
             ZStack {
@@ -28,7 +28,7 @@ struct SecondSignup: View {
                     .padding(20)
                     .padding(.top, 66.82)
                     .background(Color("10"))
-                    
+
                     VStack(spacing: 14) {
                         InputBox(title: "이름", placehorder: "이름을 입력해주세요", text: $viewModel.name)
                         HStack(spacing: 10) {
@@ -58,5 +58,4 @@ struct SecondSignup: View {
 #Preview {
     SecondSignup()
         .environmentObject(ViewModel())
-
 }

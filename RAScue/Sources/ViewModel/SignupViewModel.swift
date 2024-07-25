@@ -1,13 +1,13 @@
-import SwiftUI
 import Firebase
 import FirebaseAuth
+import SwiftUI
 
 class ViewModel: ObservableObject {
     @Published var errorMessage: String? = nil
     @Published var successMessage: String? = nil
     @Published var isEmailVerified: Bool = false
-    
-    @Published var username: String = ""
+
+    @Published var id: String = ""
     @Published var password: String = ""
     @Published var passwordCheck: String = ""
     @Published var name: String = ""
@@ -76,9 +76,9 @@ class ViewModel: ObservableObject {
             }
         }
     }
-    
+
     func signIn(completion: @escaping (Bool) -> Void) {
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] _, error in
             if let error = error {
                 DispatchQueue.main.async {
                     self?.errorMessage = error.localizedDescription

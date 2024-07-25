@@ -65,7 +65,7 @@ struct Signin: View {
                     }
 
                     Spacer()
-                    NextButton(title: "로그인", destination: EmptyView())
+                    NextButton(title: "로그인", destination: TabBar())
                 }
                 .frame(maxHeight: .infinity, alignment: .top)
             }

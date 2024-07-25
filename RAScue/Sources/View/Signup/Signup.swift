@@ -31,7 +31,7 @@ struct Signup: View {
                     .background(Color("10"))
 
                     VStack(spacing: 14) {
-                        InputBox(title: "아이디", placehorder: "아이디를 입력해주세요", text: $viewModel.username)
+                        InputBox(title: "아이디", placehorder: "아이디를 입력해주세요", text: $viewModel.id)
                         PasswordInputBox(title: "비밀번호", placehorder: "비밀번호를 입력하세요", text: $viewModel.password)
                         PasswordInputBox(title: "비밀번호 확인", placehorder: "비밀번호를 다시 입력하세요", text: $viewModel.passwordCheck)
                     }
@@ -74,7 +74,7 @@ struct Signup: View {
                             viewModel.errorMessage = "비밀번호가 일치하지 않습니다"
                             return
                         }
-                        viewModel.emailAuthSignUp(email: viewModel.email, userName: viewModel.username, password: viewModel.password)
+                        viewModel.emailAuthSignUp(email: viewModel.email, userName: viewModel.id, password: viewModel.password)
                     }) {
                         CustomText(text: "다음", fontType: .BodyStrong)
                             .padding()
@@ -84,7 +84,6 @@ struct Signup: View {
                             .cornerRadius(10)
                             .padding(.horizontal, 20)
                     }
-
                 }
                 .frame(maxHeight: .infinity, alignment: .top)
             }

@@ -35,7 +35,7 @@ struct ProfileView: View {
                                 .overlay(Circle().stroke(Color.white, lineWidth: 4))
                                 .shadow(radius: 10)
                         }
-                        
+
                         Button(action: {
                             isImagePickerPresented = true
                         }) {
@@ -52,6 +52,7 @@ struct ProfileView: View {
                             CustomText(text: "민준기", fontType: .Title)
                                 .foregroundColor(Color("90"))
                             CustomText(text: "소방사", fontType: .Title)
+                                .foregroundColor(Color("80"))
                         }
                         CustomText(text: "서울용산소방서", fontType: .Body)
                     }
@@ -61,7 +62,7 @@ struct ProfileView: View {
                     CustomText(text: "도움말", fontType: .CaptionStrong)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.leading, 40)
-                    VStack(spacing: 0){
+                    VStack(spacing: 0) {
                         HelpItem(iconName: "ID", text: "내 정보 관리")
                         HelpItem(iconName: "Announce", text: "공지사항")
                         HelpItem(iconName: "Ask", text: "문의사항")
@@ -92,7 +93,7 @@ struct HelpItem: View {
         .padding(.horizontal, 24)
         .padding(.leading, 45)
         .frame(maxWidth: .infinity, maxHeight: 74, alignment: .leading)
-        .background(Color("10"))
+        .foregroundColor(Color("80"))
     }
 }
 

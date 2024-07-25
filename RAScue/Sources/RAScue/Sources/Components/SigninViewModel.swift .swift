@@ -1,11 +1,11 @@
-import SwiftUI
 import Firebase
 import FirebaseAuth
+import SwiftUI
 
 class SigninViewModel: ObservableObject {
     @Published var errorMessage: String? = nil
     @Published var isSignedIn: Bool = false
-    
+
     @Published var username: String = ""
     @Published var password: String = ""
 

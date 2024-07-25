@@ -17,7 +17,7 @@ class SecondSignupViewModel: ObservableObject {
     @Published var errorMessage: String?
 
     func signup() {
-        if name.isEmpty || email.isEmpty || phone.isEmpty || associate.isEmpty{
+        if name.isEmpty || email.isEmpty || phone.isEmpty || associate.isEmpty {
             errorMessage = "빈칸을 모두 채워주세요."
             isSignupSuccessful = false
         } else {
